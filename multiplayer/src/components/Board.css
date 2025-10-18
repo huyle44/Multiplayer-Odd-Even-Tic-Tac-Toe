@@ -1,0 +1,164 @@
+/* .board-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(30, 30, 40, 0.8), rgba(20, 20, 30, 0.9));
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.board-cell {
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    border: 2px solid;
+    font-size: 28px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.05);
+}
+
+.board-cell.odd {
+    background: linear-gradient(135deg, rgba(80, 140, 255, 0.15), rgba(100, 180, 255, 0.08));
+    border-color: rgba(80, 140, 255, 0.3);
+    color: #90c2ff;
+}
+
+.board-cell.even {
+    background: linear-gradient(135deg, rgba(100, 220, 120, 0.15), rgba(120, 255, 150, 0.08));
+    border-color: rgba(100, 220, 120, 0.3);
+    color: #a2f5b8;
+}
+
+.board-cell.winning {
+    background: linear-gradient(135deg, rgba(255, 213, 79, 0.25), rgba(255, 171, 64, 0.2)) !important;
+    border-color: #ffd54f !important;
+    color: #ffe57f !important;
+    box-shadow: 0 0 20px rgba(255, 213, 79, 0.5), inset 0 2px 8px rgba(255, 213, 79, 0.2) !important;
+    transform: scale(1.05);
+}
+
+.board-cell.odd:not(.winning):not(:disabled):hover {
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 4px 16px rgba(80, 140, 255, 0.3), inset 0 2px 8px rgba(80, 140, 255, 0.15);
+}
+
+.board-cell.even:not(.winning):not(:disabled):hover {
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 4px 16px rgba(100, 220, 120, 0.3), inset 0 2px 8px rgba(100, 220, 120, 0.15);
+}
+
+.board-cell:not(.winning):not(:disabled):active {
+    transform: scale(0.95);
+}
+
+.board-cell:disabled {
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.board-cell-value {
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+} */
+
+/* Board Grid Container */
+.board-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(30, 30, 40, 0.8), rgba(20, 20, 30, 0.9));
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Cell Base Style */
+.board-cell {
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    border: 2px solid;
+    font-size: 28px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.05);
+}
+
+/* Odd Number Cell */
+.board-cell.odd {
+    background: linear-gradient(135deg, rgba(80, 140, 255, 0.15), rgba(100, 180, 255, 0.08));
+    border-color: rgba(80, 140, 255, 0.3);
+    color: #90c2ff;
+}
+
+/* Even Number Cell (excluding 0) */
+.board-cell.even {
+    background: linear-gradient(135deg, rgba(100, 220, 120, 0.15), rgba(120, 255, 150, 0.08));
+    border-color: rgba(100, 220, 120, 0.3);
+    color: #a2f5b8;
+}
+
+/* Zero Cell */
+.board-cell.zero {
+    background: linear-gradient(135deg, rgba(150, 150, 160, 0.12), rgba(120, 120, 130, 0.08));
+    border-color: rgba(150, 150, 160, 0.25);
+    color: #b0b0c0;
+}
+
+/* Winning Cell */
+.board-cell.winning {
+    background: linear-gradient(135deg, rgba(255, 213, 79, 0.25), rgba(255, 171, 64, 0.2)) !important;
+    border-color: #ffd54f !important;
+    color: #ffe57f !important;
+    box-shadow: 0 0 20px rgba(255, 213, 79, 0.5), inset 0 2px 8px rgba(255, 213, 79, 0.2) !important;
+    transform: scale(1.05);
+}
+
+/* Hover Effect for Odd Cells */
+.board-cell.odd:not(.winning):not(:disabled):hover {
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 4px 16px rgba(80, 140, 255, 0.3), inset 0 2px 8px rgba(80, 140, 255, 0.15);
+}
+
+/* Hover Effect for Even Cells */
+.board-cell.even:not(.winning):not(:disabled):hover {
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 4px 16px rgba(100, 220, 120, 0.3), inset 0 2px 8px rgba(100, 220, 120, 0.15);
+}
+
+/* Active/Press Effect */
+.board-cell:not(.winning):not(:disabled):active {
+    transform: scale(0.95);
+}
+
+/* Disabled State */
+.board-cell:disabled {
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+/* Cell Value Text */
+.board-cell-value {
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,12 @@
+# Node
+node_modules/
+multiplayer/node_modules/
+server/node_modules/
+
+# Build output
+dist/
+build/
+
+# Logs & env
+*.log
+.env
