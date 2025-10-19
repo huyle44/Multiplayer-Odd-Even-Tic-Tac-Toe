@@ -33,8 +33,8 @@ Before we dive into the distributed systems concepts, let's understand the game 
 
 1. Clone repo:
    ```bash
-   git clone https://github.com/username/odd-even-game.git
-2. Install dependencies:
+   git clone https://github.com/huyle44/Multiplayer-Odd-Even-Tic-Tac-Toe
+2. Install dependencies for both client and server:
    ```bash
    npm i
 3. Run server:
@@ -43,7 +43,7 @@ Before we dive into the distributed systems concepts, let's understand the game 
 5. Run 1st client:
    ```bash
    npm start
-7. Run 2nd clients:
+7. Run 2nd client:
    ```bash
    npm start
   
