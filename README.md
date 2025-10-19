@@ -46,4 +46,7 @@ Before we dive into the distributed systems concepts, let's understand the game 
 7. Run 2nd client:
    ```bash
    npm start
+
+## 🎥 Demo Video
+Demo video link: https://youtu.be/M1gLvEwnfyk
   
